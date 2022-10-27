@@ -35,8 +35,8 @@
 
             <ul>
                 <!-- item -->
-                <li v-for="(task, index) in tasks">
-                    <div @click="toggleDone(index)" :class="doneClass" class="text-wrapper">{{task.text}}</div>
+                <li :class="{done : task.done}" v-for="(task, index) in tasks">
+                    <div @click="toggleDone(index)" class="text-wrapper">{{task.text}}</div>
                     <div class="btn-remove" @click="removeTask(index)">
                         <div>X</div>
                         <div class="text-delete">REMOVE</div>

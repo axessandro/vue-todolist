@@ -21,7 +21,6 @@ createApp({
                     done: false,
                 },
             ],
-            doneClass: "",
         }
     },
     methods:{
@@ -37,12 +36,11 @@ createApp({
             this.tasks.splice(indexTask, 1);
         },
         toggleDone(index){
-            if(this.tasks[index].done === false){
-                doneClass = "done";
-                // this.tasks.done = true;
-            } else {
-                // doneClass = "";
-                this.tasks.done = false;
+           if(!this.tasks[index].done){
+                this.tasks[index].done = true;
+           } else {
+                this.tasks[index].done = false;
+                console.log(this.tasks[index].done);
             }
         }
     },

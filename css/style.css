@@ -55,6 +55,7 @@ ul li{
 
 li .text-wrapper{
     padding: 1rem;
+    width: 100%;
 }
 
 li .btn-remove{
@@ -73,7 +74,7 @@ li .btn-remove{
 .done{
     background-color: #659C75;
     color: var(--gray);
-    text-decoration: line-through;
+
 }
 
 li:hover{
