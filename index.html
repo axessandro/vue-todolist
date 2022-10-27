@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoomsday</title>
+    <!-- link vue -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- link bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <!-- link style -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- link font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="root">
+
+    <header>
+        <h1>ToDo<span>omsday</span></h1>
+        <h3>Things to do before doomsday</h3>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <div class="ms-form">
+                <label for="task"></label>
+                <input type="text"id="task" placeholder="Write the next Task" v-model.trim="newTask.text" @keyup.enter="handleAdd">
+                <button class="add" @click="handleAdd">ADD</button>
+            </div>
+
+            <ul>
+                <!-- item -->
+                <li v-for="(task, index) in tasks">
+                    <div @click="toggleDone(index)" :class="doneClass" class="text-wrapper">{{task.text}}</div>
+                    <div class="btn-remove" @click="removeTask(index)">
+                        <div>X</div>
+                        <div class="text-delete">REMOVE</div>
+                    </div>
+                </li>
+                <!-- item -->
+            </ul>
+        </div>
+    </main>
+
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>
