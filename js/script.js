@@ -29,19 +29,14 @@ createApp({
                 this.tasks.push({...this.newTask});
                 this.newTask.text = "";
             } else {
-                alert("To short dude, at least 8 characters");
+                alert("To short dude, at least 6 characters");
             }
         },
         removeTask(indexTask){
             this.tasks.splice(indexTask, 1);
         },
         toggleDone(index){
-           if(!this.tasks[index].done){
-                this.tasks[index].done = true;
-           } else {
-                this.tasks[index].done = false;
-                console.log(this.tasks[index].done);
-            }
+           this.tasks[index].done = !this.tasks[index].done;
         }
     },
 }).mount("#root")
